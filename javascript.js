@@ -1,14 +1,53 @@
-function computerPlay(){
-    let computerArray = ["Rock", "Paper", "Scissors"];
-    const rand = Math.random(0) * computerArray.length;
-    let x = Math.floor(rand);
-    return computerArray.at(x);
-}
-
-function round(playerSelection, computerSelection){
-    let input = prompt("What is your answer?")
-}
-
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-round(playerSelection, computerSelection)
+function computerPlay() {
+    array = ["Rock", "Paper", "Scissors"];
+    const x = Math.floor(Math.random() * (2 - 0 + 1) + 0)
+    return array.at(x)
+  }
+  function round(computerSelection){
+    let rock = "rock"
+    let scissors = "scissors"
+    let paper = "paper"
+    let playerSelection = prompt("What is your answer");
+    let playerSelect = playerSelection.toUpperCase();
+    let computerSelect = computerSelection.toUpperCase();
+    let compare = playerSelect.localeCompare(computerSelect);
+    win = 1;
+    loss = 0;
+    if(compare == 0){
+      return "It is a tie!"
+    }else if (playerSelect === rock.toUpperCase() && computerSelect === paper.toUpperCase()){ // All conditions in which the player loses
+      console.log("You have lost! Paper beats rock")
+      return loss
+    }else if(playerSelect === paper.toUpperCase() && computerSelect === scissors.toUpperCase()){
+      console.log("You have lost! Scissors beats paper")
+      return loss
+    }else if(playerSelect === scissors.toUpperCase() && computerSelect === rock.toUpperCase()){
+      console.log("You have lost! Rock beats Scisors") 
+      return loss
+    }else if (playerSelect === rock.toUpperCase() && computerSelect === scissors.toUpperCase() ){
+      console.log("You have Won! Rock beats Scissors") 
+      return win
+    }else if(playerSelect === paper.toUpperCase() && computerSelect === rock.toUpperCase()){
+      console.log("You have Won! Paper beats Rock")
+      return win
+    }else if(playerSelect === scissors.toUpperCase() && computerSelect === paper.toUpperCase()){
+      console.log("You have won! Scissors beats Paper!") 
+      return win
+    }
+  }
+  
+  function game(){
+    let win = 0;
+    let computerSelection = computerPlay()
+    let ans = round(computerSelection);
+    if(ans == 1){
+        win = win + 1;
+    }else if(ans == 0){
+        win = win - 1;
+    }
+    return "Score: " + win
+  }
+  for(let i = 0; i < 5; i++){
+    console.log(game())
+  }
+ 
