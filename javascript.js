@@ -36,18 +36,22 @@ function computerPlay() {
     }
   }
   
-  function game(){
-    let win = 0;
+  function game(win){
     let computerSelection = computerPlay()
     let ans = round(computerSelection);
+    let nt = 0;
     if(ans == 1){
-        win = win + 1;
+        nt++
     }else if(ans == 0){
-        win = win - 1;
-    }
-    return "Score: " + win
+        nt--
+    }else{
+        return "It is a tie!"
+    }   
+    return "Score: " + nt
   }
-  for(let i = 0; i < 5; i++){
-    console.log(game())
-  }
+  let computerSelection = computerPlay()
+for(let i = 0; i < 5; i++){
+    round(computerSelection)
+}
+console.log(game())
  
