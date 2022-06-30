@@ -8,9 +8,7 @@ function computerSelect(){
   let computerChoice = options[x]
   return computerChoice
 }
-function playerSelection(){
-  
-}
+
 rock.addEventListener('click', () => {
   user = 'Rock'
   console.log(playRound(user, computerSelect()))
