@@ -1,6 +1,7 @@
 const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
+const results = document.querySelector('.results')
 
 function computerSelect(){
   options = ["Rock", "Paper", "Scissors"]
@@ -21,26 +22,39 @@ scissors.addEventListener('click', () => {
   user = 'Scissors'
   console.log(playRound(user, computerSelect()))
 })
-
+let compScore = 0;
+let userScore = 0;
 function playRound(user, computer){
   if(user == computer){
     return "It is a tie!"
   }else if(user == 'Rock'){
     if(computer == 'Paper'){
+      compScore++
+      console.log(compScore, userScore)
       return "You lose! Paper beats Rock"
     }else if(computer == 'Scissors'){
+      userScore++
+      console.log(compScore, userScore)
       return "You win! Rock beats Scissors"
     }
   }else if(user == 'Paper'){
     if(computer == 'Rock'){
+      userScore++
+      console.log(compScore, userScore)
       return "You win! Paper beats Rock"
     }else if(computer == 'Scissors'){
+      compScore++
+      console.log(compScore, userScore)
       return "You lose! Scissors beats Paper"
     }
   }else if(user == 'Scissors'){
     if(computer == 'Rock'){
+      compScore++
+      console.log(compScore, userScore)
       return 'You lose! Rock beats Scissors'
     }else if(computer == 'Paper'){
+      userScore++
+      console.log(compScore, userScore)
       return "You win! Scissors beats Paper"
     }
   }
