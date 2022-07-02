@@ -2,8 +2,11 @@ const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
 const results = document.querySelector('#results')
-/*const content = document.createElement('div');
-content.classList.add('content'); */
+const users = document.querySelector('#user')
+const comp = document.querySelector('#comp')
+const rounds = document.querySelector('#rounds')
+const won = document.querySelector('#won')
+
 
 function computerSelect(){
   options = ["Rock", "Paper", "Scissors"]
@@ -14,15 +17,16 @@ function computerSelect(){
 
 rock.addEventListener('click', () => {
   user = 'Rock'
-  console.log(playRound(user, computerSelect()))
+  won.innerHTML = playRound(user, computerSelect())
 })
 paper.addEventListener('click', () => {
   user = 'Paper'
-  console.log(playRound(user, computerSelect()))
+  won.innerHTML = playRound(user, computerSelect())
 })
 scissors.addEventListener('click', () => {
   user = 'Scissors'
-  console.log(playRound(user, computerSelect()))
+  won.innerHTML = playRound(user, computerSelect())
+  //console.log(playRound(user, computerSelect()))
 })
 let compScore = 0;
 let userScore = 0;
