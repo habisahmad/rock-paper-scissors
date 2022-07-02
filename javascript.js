@@ -1,7 +1,9 @@
 const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
-const results = document.querySelector('.results')
+const results = document.querySelector('#results')
+/*const content = document.createElement('div');
+content.classList.add('content'); */
 
 function computerSelect(){
   options = ["Rock", "Paper", "Scissors"]
@@ -33,7 +35,6 @@ function playRound(user, computer){
     }else if(user == 'Rock'){
       if(computer == 'Paper'){
         compScore++
-        console.log(compScore, userScore)
         win()
         return "You lose! Paper beats Rock"
       }else if(computer == 'Scissors'){
@@ -67,17 +68,26 @@ function playRound(user, computer){
         return "You win! Scissors beats Paper"
       }
     }
+  }else{
+    round = 0;
   }
   
   
 }
+
 let round = 0
 function win(){
   if(userScore == 5 || compScore == 5){
     if(compScore == 5){
       console.log("Computer has won!")
+      round = 0
+      userScore = 0;
+      compScore = 0;
     }else if(userScore == 5){
       console.log("User has won!")
+      round = 0
+      userScore = 0;
+      compScore = 0;
     }
   }else{
     round++
