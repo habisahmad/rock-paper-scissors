@@ -1,5 +1,4 @@
 # rock-paper-scissors
-# THIS PROJECT IS INCOMPLETE
 Rock Paper Scissors project using JavaScript!
 
 Changelog:
