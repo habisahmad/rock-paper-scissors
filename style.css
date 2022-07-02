@@ -1,0 +1,23 @@
+body{
+    background-color: powderblue;
+    text-align: center;
+}
+
+h1{
+    font-size: 60px;
+}
+
+#results{
+    font-weight: bolder;
+}
+
+p{
+    font-size: xx-large;
+}
+
+button{
+    background-color: powderblue;
+    border-radius: 15%;
+    font-size: x-large;
+    border: 3px solid rgb(255, 255, 255)
+}
